@@ -94,12 +94,12 @@ class SCD4X:
 
     """
 
-    def __init__(self, i2c_bus: I2C, address: int = SCD4X_DEFAULT_ADDR) -> None:
-        print("__init__ :", dir())
-        print("address : %x" % address)
-        print("i2c_bus : ", i2c_bus)
+    def __init__(self, i2c_bus: I2C, address: int = SCD4X_DEFAULT_ADDR, debug=False) -> None:
+        if (debug):
+            print("__init__ :", dir())
+            print("address : %x" % address)
+            print("i2c_bus : ", i2c_bus)
         self.address = address
-        print(i2c_bus)
         self.i2c_device = i2c_bus
         self._buffer = bytearray(18)
         self._cmd = bytearray(2)
