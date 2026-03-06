@@ -1,6 +1,6 @@
 from machine import PWM
 
-class Servo(PWM):
+class Servo():
     
     def __init__(self,pin,initppm=1500):
         self.__PWM__ = PWM(pin,freq=50)
